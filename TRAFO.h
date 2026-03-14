@@ -4,7 +4,7 @@
 //  AUTHOR: Rob Tillaart
 //    DATE: 2026-03-13
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for determine RMS of AC
+// PURPOSE: Arduino library for AC line voltage and frequency measurement.
 //     URL: https://github.com/RobTillaart/TRAFO
 //
 

@@ -11,7 +11,7 @@
 
 # TRAFO
 
-Arduino library for TRAFO measurement.
+Arduino library for AC line voltage and frequency measurement.
 
 
 ## Description
@@ -21,9 +21,9 @@ Arduino library for TRAFO measurement.
 This library is to use a transformer (TRAFO) like the ZMPT101B to measure the 
 AC line voltage.
 
-The library was triggered by a discussion on the forum about using 
+The library was inspired by a discussion on the forum about using 
 an external ADC for the ZMPT101B library. 
-This library tries to generalize this so it can be used for different
+This library tries to generalize the concept so it can be used for different
 transformers and with both internal as external ADC's.
 
 The library supports
@@ -31,6 +31,8 @@ The library supports
 - detect the frequency of the line.
 
 Feedback as always is welcome.
+
+The library is not tested with hardware yet.
 
 
 ### Warning
@@ -41,17 +43,25 @@ and any other applications that may cause personal injury due to the product's f
 
 ### Related
 
-- https://github.com/RobTillaart/ACS712
-- https://github.com/RobTillaart/printHelpers
-- https://github.com/RobTillaart/INA226
-- https://forum.arduino.cc/t/using-zmpt101b-with-ads1115/1434976 - trigger for this library
+- https://github.com/RobTillaart/ACS712 - current sensor AC and DC
+- https://github.com/RobTillaart/INA226 - current and voltage sensor (one of many)
+- https://github.com/RobTillaart/printHelpers - for scientific notation
+
+Trigger for this library
+- https://forum.arduino.cc/t/using-zmpt101b-with-ads1115/1434976 
 
 
 
 ### Tested
 
-TODO: Test on Arduino UNO and ESP32
+TODO: 
+- Test on Arduino UNO et al with transformer.
+- order hardware - e.g. ZMPT101B module.
 
+Note:
+A minimal test with an UNO R3 (powered USB) with floating internal ADC 
+touched by my finger gave a frequency of around 50 Hz which is our mains.
+ 
 
 ## Interface
 

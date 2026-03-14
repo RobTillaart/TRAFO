@@ -1,7 +1,7 @@
 {
   "name": "TRAFO",
   "keywords": "RMS, frequency, transformer",
-  "description": "Arduino library for TRAFO measurement.",
+  "description": "Arduino library for AC line voltage and frequency measurement.",
   "authors":
   [
     {
