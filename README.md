@@ -80,11 +80,12 @@ touched by my finger gave a frequency of around 50 Hz which is our mains.
 
 ### Measurements
 
-- **float detectFrequency(uint8_t times = 10)** idem. 
-Typical around 50.0 or 60.0 
+- **float detectFrequency(uint8_t times = 1)** idem. 
+Typical around 50.0 or 60.0. Sample multiple times to improve accuracy.
 - **void setMicrosAdjust(float factor = 1.0f)** adjust the micros timing 
 to improve the accuracy of the frequency
 - **float getRMS()** idem. Typical around 230V or 110V.
+Only works if detectFrequency() is called before.
 
 
 ### Debugging
@@ -108,6 +109,7 @@ to improve the accuracy of the frequency
 #### Could
 
 - create unit tests if possible
+- flag if detectFrequency is called for getRMS().
 
 #### Wont
 

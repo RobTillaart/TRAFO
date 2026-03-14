@@ -34,8 +34,9 @@ public:
 
   //  based upon https://github.com/RobTillaart/ACS712
   //  at least 10 Hz.
-  float detectFrequency(uint8_t times = 10)
+  float detectFrequency(uint8_t times = 1)
   {
+    if (times < 1) times = 1;
     int32_t minimum = 0;
     int32_t maximum = 0;
     minimum = maximum = _readADC();
