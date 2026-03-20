@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - add missing **trafoFactor** to constructor
 - add **TRAFO_I2C_LCD.ino"
 - add **TRAFO_alarm.ino"
+- add **float getPTP()** peak to peak value.
 - update readme
 - minor edits
 

@@ -31,6 +31,7 @@ public:
     _zeroPoint = steps / 2;  //  reasonable initial value
     _voltsPerStep = maxVoltage * trafoFactor / steps;
     _frequency = TRAFO_DEFAULT_FREQUENCY;
+    _period = 1000000 / _frequency;
     detectFrequency();
     return true;
   };
@@ -111,11 +112,17 @@ public:
     return rms;
   };
 
-
 /*  
  * RMS based upon peak2peak, slightly off during 1st tests.
  *
   float getRMS2()
+  {
+    rms = getPTP() * (1.0 / (2.0 * sqrt(2.0)));
+    return rms;
+  };
+*/
+
+  float getPTP()
   {
     int32_t minimum = 0;
     int32_t maximum = 0;
@@ -129,11 +136,9 @@ public:
       else if (value > maximum) maximum = value;
     }
     float peak2peak = (maximum - minimum);
-    float rms = peak2peak / (2 * sqrt(2)) * _voltsPerStep;
-    return rms;
+    float ptp = peak2peak * _voltsPerStep;
+    return ptp;
   };
-*/
-
 
   int32_t getADC()
   {

@@ -102,6 +102,7 @@ to improve the accuracy of the frequency measurement.
 - **float getRMS()** idem. Typical around 230V or 110V.
 Only works if detectFrequency() is called before as it needs the zeroPoint.
 Current version assumes a "clean" sine wave form.
+- **float getPTP()** get peak to peak value.
 
 The library has a commented **getRMS()** version that is based upon the 
 peak to peak value. In initial tests it was slightly less accurate.
@@ -139,7 +140,7 @@ Example
 - investigate performance
 - investigate frequency range detected.
 - As detectFrequency() determines the peak2peak value, its signature might 
-  need to change to **float measure(float &freq, float &voltage)** so it 
+  need to change to **float measure(float &freq, float &RMS)** so it 
   measures all in one call might be efficient.  (0.2.0)
 - test 110 Volt and other AC levels 
 - test other transformers.
@@ -149,6 +150,7 @@ Example
 
 - create unit tests if possible.
 - other functions possible?
+- add **float getSecondaryVoltage()** something ?
 
 
 #### Wont
