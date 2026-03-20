@@ -26,4 +26,4 @@ compile:
     # - mega2560
     - rpipico
   libraries:
-    "I2C_LCD"
+    - "I2C_LCD"
