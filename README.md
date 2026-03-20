@@ -113,6 +113,7 @@ The difference was less than 2% so it might actual be not too bad.
 
 - **int32_t getADC()** call the readADC given in **begin()**.
 returns raw units.
+- **float getVoltagePerStep()** idem.
 - **int32_t getZeroPoint()** last determined zero point (in ADC units).
 
 

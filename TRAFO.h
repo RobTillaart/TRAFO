@@ -145,6 +145,10 @@ public:
     return _readADC();
   };
 
+  int32_t getVoltagePerStep()
+  {
+    return _voltsPerStep();
+  };
 
   int32_t getZeroPoint()
   {
