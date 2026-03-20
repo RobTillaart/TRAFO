@@ -12,7 +12,11 @@
 #include "Arduino.h"
 
 
-#define TRAFO_LIB_VERSION         (F("0.1.1"))
+#define TRAFO_LIB_VERSION           (F("0.1.1"))
+
+#ifndef TRAFO_DEFAULT_FREQUENCY
+#define TRAFO_DEFAULT_FREQUENCY     (50.0)
+#endif
 
 
 class TRAFO
@@ -26,13 +30,14 @@ public:
     _steps = steps;
     _zeroPoint = steps / 2;  //  reasonable initial value
     _voltsPerStep = maxVoltage * trafoFactor / steps;
+    _frequency = TRAFO_DEFAULT_FREQUENCY;
     detectFrequency();
     return true;
   };
 
 
   //  based upon https://github.com/RobTillaart/ACS712
-  //  at least 10 Hz.
+  //  range 10 - 400 Hz
   float detectFrequency(uint8_t times = 1)
   {
     if (times < 1) times = 1;
@@ -40,6 +45,7 @@ public:
     int32_t maximum = 0;
     minimum = maximum = _readADC();
 
+    //  goes as low as 10 Hz
     uint32_t timeOut = 100000;
     uint32_t start = micros();
     while (micros() - start < timeOut)
@@ -127,6 +133,7 @@ public:
     return rms;
   };
 */
+
 
   int32_t getADC()
   {

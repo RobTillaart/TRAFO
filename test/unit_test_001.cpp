@@ -41,7 +41,7 @@ unittest_teardown()
 
 unittest(test_constants)
 {
-  assertEqual(1, 1);
+  assertEqual(50.0, TRAFO_DEFAULT_FREQUENCY, 0.01);
 }
 
 
@@ -50,8 +50,8 @@ unittest(test_constructor)
   TRAFO myTrafo;
   assertTrue(myTrafo.begin(readADC, 4095, 250, 1));
 
-  //  assertEqual(1234, myTrafo.getADC());
   assertEqual(2047, myTrafo.getZeroPoint());
+  assertEqualFloat(2047, myTrafo.getZeroPoint());
 }
 
 

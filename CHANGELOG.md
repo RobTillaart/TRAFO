@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.1.1] - 2026-03-20
 - add missing **trafoFactor** to constructor
 - add **TRAFO_I2C_LCD.ino"
+- add **TRAFO_alarm.ino"
 - update readme
 - minor edits
 
