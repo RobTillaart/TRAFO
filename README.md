@@ -32,8 +32,6 @@ The library supports
 
 Feedback as always is welcome.
 
-The library is not tested with hardware yet.
-
 
 ### Warning
 
@@ -72,26 +70,37 @@ touched by my finger gave a frequency of around 50 Hz which is our mains.
 ### Constructor
 
 - **TRAFO()**
-- **bool begin(int32_t (\* readADC)(), uint32_t steps, float maxVoltage)** 
+- **bool begin(int32_t (\* readADC)(), uint32_t steps, float maxVoltage, float trafoFactor = 1)** 
   - readADC is a function to read an ADC returning an int32.
   - steps = nr of ADC steps, typical power of two like 1024, 4096, etc.
   - maxVoltage = conversion voltage for max value of ADC
+  - trafoFactor = conversion of ADC voltage to transformer voltage (calibration). The default of the trafoFactor is set to 1.
+
+One can call begin again with adjusted parameters to calibrate the 
+library for a specific transformer.
 
 
 ### Measurements
 
 - **float detectFrequency(uint8_t times = 1)** idem. 
 Typical around 50.0 or 60.0. Sample multiple times to improve accuracy.
+Note it will be blocking for at least two periods.
 - **void setMicrosAdjust(float factor = 1.0f)** adjust the micros timing 
-to improve the accuracy of the frequency
+to improve the accuracy of the frequency measurement.
 - **float getRMS()** idem. Typical around 230V or 110V.
-Only works if detectFrequency() is called before.
+Only works if detectFrequency() is called before as it needs the zeroPoint.
+Current version assumes a "clean" sine wave form.
+
+The library has a commented **getRMS()** version that is based upon the 
+peak to peak value. In initial tests it was slightly less accurate.
+The difference was < 2%
 
 
 ### Debugging
 
-- **int32_t getADC()** call the readADC given in constructor.
-- **int32_t getZeroPoint()** last determined zero point.
+- **int32_t getADC()** call the readADC given in **begin()**.
+returns raw units.
+- **int32_t getZeroPoint()** last determined zero point (in ADC units).
 
 
 ## Future
@@ -99,8 +108,6 @@ Only works if detectFrequency() is called before.
 #### Must
 
 - improve documentation
-- get hardware to test
-- calibration routine
 
 #### Should
 

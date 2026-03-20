@@ -47,7 +47,18 @@ unittest(test_constants)
 
 unittest(test_constructor)
 {
-  //  TRAFO obj;
+  TRAFO myTrafo;
+  assertTrue(myTrafo.begin(readADC, 4095, 250, 1));
+
+  //  assertEqual(1234, myTrafo.getADC());
+  assertEqual(2047, myTrafo.getZeroPoint());
+}
+
+
+//  dummy
+int32_t readADC()
+{
+  return 1234;
 }
 
 
