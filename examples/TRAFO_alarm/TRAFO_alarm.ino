@@ -6,7 +6,10 @@
 //
 //  This sketch defines two level, a low and high treshold
 //  The measured voltage should be between these levels.
-//  If not a message is printed
+//  If not a message is printed with a (simple) timestamp.
+//  Alternatively one could sound a buzzer or use a RGB LED 
+//  and the map2color library to map the voltage to a color of choice.
+
 
 #include "TRAFO.h"
 
