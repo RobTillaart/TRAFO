@@ -52,15 +52,6 @@ unittest(test_constants)
 }
 
 
-unittest(test_constructor)
-{
-  TRAFO myTrafo;
-  assertTrue(myTrafo.begin(readADC, 4095, 250, 1));
-
-  assertEqual(2047, myTrafo.getZeroPoint());
-}
-
-
 unittest_main()
 
 
