@@ -119,7 +119,7 @@ returns raw units.
 
 ## Calibration
 
-First run a sketch with the factor set to 100, call getRMS() and divide 
+First run a sketch with the trafoFactor set to 100, call getRMS() and divide 
 the value expected by the value got. 
 
 Example

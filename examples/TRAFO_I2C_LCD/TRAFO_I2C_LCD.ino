@@ -1,5 +1,5 @@
 //
-//    FILE: TRAFO_demo.ino
+//    FILE: TRAFO_I2C_LCD.ino
 //  AUTHOR: Rob Tillaart
 // PURPOSE: test basic behaviour and performance
 //     URL: https://github.com/RobTillaart/TRAFO
