@@ -147,7 +147,7 @@ public:
 
   int32_t getVoltagePerStep()
   {
-    return _voltsPerStep();
+    return _voltsPerStep;
   };
 
   int32_t getZeroPoint()
