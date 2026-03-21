@@ -103,10 +103,16 @@ to improve the accuracy of the frequency measurement.
 Only works if detectFrequency() is called before as it needs the zeroPoint.
 Current version assumes a "clean" sine wave form.
 - **float getPTP()** get peak to peak value.
+- **float determineFormFactor()** reverse calculating the from factor
+from **getPTP** and **getRMS()**. 
 
 The library has a commented **getRMS()** version that is based upon the 
 peak to peak value. In initial tests it was slightly less accurate.
 The difference was less than 2% so it might actual be not too bad.
+Cause is probably not a perfect sine wave form.
+
+The library has a commented **determineFormFactor()** version which is 
+faster and uses more program memory.
 
 
 ### Debugging
